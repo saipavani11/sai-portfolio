@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.snake-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.snake-canvas {
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 0 15px #ff7eb9;
+  image-rendering: pixelated;
+}
+
+.score-text {
+  font-family: 'Press Start 2P', monospace;
+  color: #ffb3d9;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  text-shadow: 0 0 4px #ff80bf;
+}
+
+.restart-button {
+  margin-top: 15px;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.8rem;
+  background: #ff5c8a;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff5c8a;
+  transition: transform 0.2s;
+}
+.restart-button:hover {
+  transform: scale(1.05);
+}

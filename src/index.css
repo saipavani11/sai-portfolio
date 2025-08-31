@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .pixelated {
+    image-rendering: pixelated;
+    box-shadow: inset -3px -3px 0 #d4af37, inset 3px 3px 0 #fff176;
+  }
+}
+
+.animated-bg {
+  @apply bg-gradient-to-br from-[#280120] to-[#02053e] dark:from-[#280120] dark:to-[#020764];
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@layer base {
+  body {
+    font-family: 'Poppins', sans-serif; /* default for light theme */
+  }
+
+  .dark body {
+    font-family: 'Press Start 2P', cursive; /* for dark theme */
+  }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.glitch {
+  position: relative;
+  color: white;
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px #ff00c8; }
+  20% { text-shadow: -2px -2px #00ffe0; }
+  40% { text-shadow: 2px -2px #ff00c8; }
+  60% { text-shadow: -2px 2px #00ffe0; }
+  80% { text-shadow: 0px 0px #fff; }
+  100% { text-shadow: 2px 2px #ff00c8; }
+}
+
+#gameCanvas {
+  background-color: #1a1a2d;
+  image-rendering: pixelated;
+  box-shadow: 0 0 0 2px #333, 0 0 10px rgba(72, 61, 139, 0.3);
+}
+
+.pixel-text {
+  font-family: 'Press Start 2P', cursive;
+  image-rendering: pixelated;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+
+/* Add this to your global CSS file (e.g., src/index.css) */
+
+.education-card {
+  position: relative;
+  overflow: hidden;
+  /* Keep this if you want the border rotation */
+  transition: all 0.3s ease-in-out; 
+  /* Add default box-shadow for a base look or remove if you want shadow only on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Initial subtle shadow */
+}
+
+/* For the moving border effect (if you still want it) */
+
+.education-card:hover::before {
+  animation-play-state: running; /* Runs on hover */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* New: Define the pulsating shadow animation */
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 5px rgba(233, 193, 54, 0.4); /* Start with a medium glow */
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(233, 193, 54, 0.8), /* Brighter, wider glow */
+                0 0 12px rgba(233, 193, 54, 0.2); /* Even wider, softer glow */
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(233, 193, 54, 0.4); /* Return to medium glow */
+  } 
+}
+
+/* Apply the pulsating shadow on hover */
+.education-card:hover {
+  /* This will override any static box-shadow defined above on hover */
+  animation: pulse-shadow 2s infinite alternate; /* Apply pulsating animation */
+  border-color: rgba(233, 193, 54, 0.8); /* Make border more prominent on hover */
+}
