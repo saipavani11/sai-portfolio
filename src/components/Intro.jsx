@@ -58,7 +58,7 @@ const Intro = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <a
-              href="/public/01JST22UIS081_T_Sai_Pavani.pdf"
+              href="/01JST22UIS081_T_Sai_Pavani.pdf"
               download
               className="px-8 py-3 rounded-lg bg-[#e9c136] text-[#000] font-semibold shadow-lg hover:bg-[#e9c136]/80 transition-all"
             >
